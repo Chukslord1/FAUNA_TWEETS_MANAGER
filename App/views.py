@@ -102,6 +102,5 @@ def reports(request):
     for i in get_reports["data"]:
         all_reports.append(q.get(q.ref(q.collection("TweetsReport"),i.id())))
     reports=client.query(all_reports)
-    print(reports)
     context={"reports":reports}
     return render(request,"reports.html",context)
